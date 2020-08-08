@@ -1,0 +1,21 @@
+﻿@model Tamirhane.Models.IsEmriModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Is Emri Listesi</h2>
+
+@(Html.Kendo().Grid<Tamirhane.Models.IsEmriModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.AracId).Width(190);
+            columns.Bound(c => c.MusteriId);
+            columns.Bound(c => c.RandevuId).Width(110);
+        })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("IsEmri_Read", "IsEmri"))
+        )
+) 

@@ -1,0 +1,10 @@
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\Tamirhane.Data.dll.config
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\Tamirhane.Data.dll
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\Tamirhane.Data.pdb
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\EntityFramework.dll
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\EntityFramework.xml
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\obj\Debug\Tamirhane.Data.csprojResolveAssemblyReference.cache
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\obj\Debug\Tamirhane.Data.dll
+C:\Users\rpd\documents\visual studio 2015\Projects\Tamirhane\Tamirhane.Data\obj\Debug\Tamirhane.Data.pdb

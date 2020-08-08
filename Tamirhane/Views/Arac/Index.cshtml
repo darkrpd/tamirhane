@@ -1,0 +1,88 @@
+﻿@model Tamirhane.Models.AracModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Arac Listesi</h2>
+
+@*@(Html.Kendo().Grid<Tamirhane.Models.AracModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.Marka).Width(190);
+            columns.Bound(c => c.Model);
+            columns.Bound(c => c.ModelYili).Width(110);
+            columns.Bound(c => c.Plaka).Width(110);
+        })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Editable(editable => editable.Mode(GridEditMode.PopUp))
+            .Read(read => read.Action("Arac_Read", "Arac"))
+            .Create(create => create.Action("Arac_Create", "Arac"))
+        )
+)*@ 
+
+
+
+@(Html.Kendo().Grid<Tamirhane.Models.AracModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.Marka).Width(190);
+            columns.Bound(c => c.Model);
+            columns.Bound(c => c.ModelYili).Width(110);
+            columns.Bound(c => c.Plaka).Width(110);
+            //columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+         .ToolBar(toolbar => toolbar.Create())
+         .Editable(editable => editable.Mode(GridEditMode.PopUp))
+         .Pageable()
+         .Sortable()
+         .Scrollable()
+         .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(20)
+            .Model(model => model.Id(p => p.Id))
+            .Read(read => read.Action("Arac_Read", "Arac"))
+            .Create(create => create.Action("Arac_Create", "Arac"))
+        //.Update(update => update.Action("Musteri_Update", "Musteri"))
+        //.Destroy(destroy => destroy.Action("Musteri_Destroy", "Musteri"))
+        )
+)
+
+
+
+ 
+
+
+
+@*@(Html.Kendo().Grid<Tamirhane.Models.MusteriModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.Isim).Width(190);
+            columns.Bound(c => c.Soyisim);
+            columns.Bound(c => c.Telefon).Width(110);
+            //columns.Bound(c => c.Aracs).Width(110);
+            //  columns.ForeignKey(p => p.Aracs, (System.Collections.IEnumerable)ViewData["categories"], "CategoryID", "CategoryName")
+            //.Title("Category").Width(200);
+            columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+         .ToolBar(toolbar => toolbar.Create())
+         .Editable(editable => editable.Mode(GridEditMode.PopUp))
+         .Pageable()
+         .Sortable()
+         .Scrollable()
+         .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(20)
+            .Model(model => model.Id(p => p.Id))
+            .Read(read => read.Action("Musteri_Read", "Musteri"))
+            .Create(create => create.Action("Musteri_Create", "Musteri"))
+            .Update(update => update.Action("Musteri_Update", "Musteri"))
+            .Destroy(destroy => destroy.Action("Musteri_Destroy", "Musteri"))
+        )
+)*@ 

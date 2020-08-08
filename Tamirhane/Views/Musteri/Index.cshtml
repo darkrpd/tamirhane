@@ -1,0 +1,47 @@
+﻿@model Tamirhane.Models.MusteriModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Musteri Listesi</h2>
+
+<script>
+    onClick = () => {
+        window.location = "/Musteri/New/"; //"http://localhost:4368/Arac"
+    }
+    
+</script>
+
+@(Html.Kendo().Button()
+    .Name("addNewRow")
+    .Content("Yeni Kayıt Ekle")
+    .HtmlAttributes(new { type = "button" })
+    .Events(ev => ev.Click("onClick"))) 
+
+ 
+
+@(Html.Kendo().Grid<Tamirhane.Models.MusteriModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.Isim).Width(190);
+            columns.Bound(c => c.Soyisim);
+            columns.Bound(c => c.Telefon).Width(110);
+            //columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+         //.ToolBar(toolbar => toolbar.Create())
+         //.Editable(editable => editable.Mode(GridEditMode.PopUp))
+         .Pageable()
+         .Sortable()
+         .Scrollable()
+         .DataSource(dataSource => dataSource
+         .Ajax()
+         .PageSize(20)
+         .Model(model => model.Id(p => p.Id))
+         .Read(read => read.Action("Musteri_Read", "Musteri"))
+        //.Create(create => create.Action("Musteri_Create", "Musteri"))
+        //.Update(update => update.Action("Musteri_Update", "Musteri"))
+        //.Destroy(destroy => destroy.Action("Musteri_Destroy", "Musteri"))
+        )
+) 

@@ -1,0 +1,37 @@
+﻿@model Tamirhane.Models.RandevuModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Randevu Listesi</h2>
+
+
+
+<script>
+    onClick = () => {
+        window.location = "/Randevu/New/"; 
+    }
+
+</script>
+
+@(Html.Kendo().Button()
+    .Name("addNewRow")
+    .Content("Yeni Kayıt Ekle")
+    .HtmlAttributes(new { type = "button" })
+    .Events(ev => ev.Click("onClick")))
+
+
+@(Html.Kendo().Grid<Tamirhane.Models.RandevuModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(140);
+            columns.Bound(c => c.AracId).Width(190);
+            columns.Bound(c => c.MusteriId);
+            columns.Bound(c => c.RandevuTarihi).Width(110);
+        })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Randevu_Read", "Randevu"))
+        )
+) 
